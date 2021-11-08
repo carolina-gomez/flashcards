@@ -2,7 +2,15 @@ import React from "react";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import { Route, Switch } from "react-router-dom";
-import Home from "../Home/Home";
+import Home from "../Components/Home";
+import ViewDeck from "../Components/Decks/ViewDeck"
+import EditDeck from "../Components/Decks/EditDeck"
+import CreateDeck from "../Components/Decks/CreateDeck"
+import StudyDeck from "../Components/Decks/StudyDeck"
+import AddCard from "../Components/Cards/AddCard"
+import EditCard from "../Components/Cards/EditCard"
+
+
 function Layout() {
   return (
     <>
@@ -12,6 +20,27 @@ function Layout() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/decks">
+            <Home />
+          </Route>
+          <Route path="/decks/:deckId/study">
+            <StudyDeck />
+          </Route>
+          <Route path="/decks/new">
+            <CreateDeck />
+          </Route>
+          <Route exact path="/decks/:deckId">
+            <ViewDeck />
+          </Route>
+          <Route path="/decks/:deckId/edit">
+            <EditDeck />
+          </Route>
+          <Route path="/decks/:deckId/cards/new">
+            <AddCard />
+          </Route>
+          <Route path="/decks/:deckId/cards/:cardId/edit">
+            <EditCard />
           </Route>
           <Route>
             <NotFound />
