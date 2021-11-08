@@ -32,8 +32,8 @@ export default function Home() {
              <p class="card-text">
                {deck.description}
              </p>
-             <Link href="#" class="btn btn-secondary mr-2"><span class="oi oi-eye"></span> View</Link>
-             <Link href="#" class="btn btn-primary"> <span class="oi oi-book"></span> Study</Link>
+             <Link to={`/decks/${deck.id}`} class="btn btn-secondary mr-2"><span class="oi oi-eye"></span> View</Link>
+             <Link to={`/decks/${deck.id}/study`} class="btn btn-primary"> <span class="oi oi-book"></span> Study</Link>
              <Link href="#" class="btn btn-danger float-right"><span class="oi oi-trash"></span> </Link>
            </div>
          </div>
