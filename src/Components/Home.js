@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <Link href="#" className="btn btn-secondary mb-3">
+      <Link to="#" className="btn btn-secondary mb-3">
         <span className="oi oi-plus"></span> Create Deck</Link>
       {decks.map(deck => (
            <div className="card mb-3">

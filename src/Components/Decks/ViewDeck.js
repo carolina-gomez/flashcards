@@ -19,11 +19,6 @@ export default function ViewDeck() {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [deck.id]);
 
-    
-
-
-    console.log(deck)
-
     return (
         <>
         <div className="breacrumbs">
