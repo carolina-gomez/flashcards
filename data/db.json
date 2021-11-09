@@ -26,8 +26,8 @@
     },
     {
       "id": 3,
-      "front": "Hello",
-      "back": "Bye",
+      "front": "How do you pass data 'down' to a React child component?",
+      "back": "As properties or props",
       "deckId": 1
     },
     {
@@ -41,6 +41,13 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
+    },
+    {
+      "cards": [],
+      "front": "b",
+      "back": "b",
+      "deckId": 1,
+      "id": 7
     }
   ]
 }
