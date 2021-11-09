@@ -1,11 +1,21 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useHistory } from "react-router-dom"
 import React, { useState, useEffect } from "react";
-import { readDeck } from "../../utils/api"
+import { readDeck, deleteDeck } from "../../utils/api"
 
 export default function ViewDeck() {
+    const history = useHistory();
     const {deckId} = useParams();
     const [deck, setDeck] = useState({cards: []});
     const [cards, setCards] = useState([]);
+
+    const deleteDeckHandler = (deckId) => {
+      const result = window.confirm(
+        "Delete this deck?\n\nYou will not be able to recover it."
+    )
+    if (result) {
+      deleteDeck(deckId).then(history.push("/"))
+    }
+    }
 
 
     const loadDeck = () => {
@@ -42,7 +52,7 @@ export default function ViewDeck() {
              <Link to={`/decks/${deck.id}/edit`} className="btn btn-secondary mr-2"><span class="oi oi-pencil"></span> Edit</Link>
              <Link to={`/decks/${deck.id}/study`} className="btn btn-primary mr-2"> <span className="oi oi-book"></span> Study</Link>
              <Link to={`/decks/${deck.id}/cards/new`} className="btn btn-primary"><span className="oi oi-plus"></span> Add Cards</Link>
-             <Link href="#" className="btn btn-danger float-right"><span className="oi oi-trash"></span> </Link>
+             <button type="button" className="btn btn-danger float-right" onClick={() => deleteDeckHandler(deck.id)} ><span className="oi oi-trash"></span></button>
            </div>
          </div>
         <h1>Cards</h1>

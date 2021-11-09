@@ -12,7 +12,6 @@ export default function Home() {
   if (result) {
     deleteDeck(deckId).then(loadDecks())
   }
-
   }
 
   const loadDecks = () => {
