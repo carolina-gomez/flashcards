@@ -53,6 +53,30 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "front side of card",
+      "back": "back side of card",
+      "deckId": 3,
+      "id": 8
+    },
+    {
+      "front": "test 2 front of card",
+      "back": "test 2 back of card",
+      "deckId": 3,
+      "id": 9
+    },
+    {
+      "front": "3rd card",
+      "back": "3rd card back",
+      "deckId": 3,
+      "id": 10
+    },
+    {
+      "front": "one more to study",
+      "back": "one more to study back",
+      "deckId": 3,
+      "id": 11
     }
   ]
 }
