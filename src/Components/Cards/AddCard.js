@@ -1,3 +1,5 @@
+    //createCard(deckId, card, signal)
+    //path="/decks/:deckId/cards/new"
 import React from "react"
 
 export default function AddCard() {

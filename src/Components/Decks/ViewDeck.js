@@ -1,3 +1,7 @@
+/** TO-DO 
+ * still have to add delete card to the deleteCard button
+*/
+
 import { Link, useParams, useHistory } from "react-router-dom"
 import React, { useState, useEffect } from "react";
 import { readDeck, deleteDeck } from "../../utils/api"
