@@ -23,7 +23,7 @@ export default function StudyDeck() {
     const nextHandler = () => {
         if (index === cards.length - 1) {
             const restart = window.confirm(
-                "Restart cards?/n/nClick 'cancel' to return to the home page."
+                "Restart cards?\n\nClick 'cancel' to return to the home page."
             )
             if (restart) {
                 // why did I have to set the index to -1?

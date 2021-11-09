@@ -5,6 +5,17 @@ import { Link } from "react-router-dom";
 export default function Home() {
      const [decks, setDecks] = useState([]);
 
+  const deleteDeckHandler = () => {
+    const deleteDeck = window.confirm(
+      "Delete this deck?\n\nYou will not be able to recover it."
+  )
+  if (deleteDeck) {
+      console.log("deck was deleted")
+  } else {
+      console.log("you clicked cancel on ")
+  }
+  }
+
   const loadDecks = () => {
     listDecks().then(setDecks)
   }
@@ -16,7 +27,7 @@ export default function Home() {
 
   return (
     <>
-      <Link to="#" className="btn btn-secondary mb-3">
+      <Link to="/decks/new" className="btn btn-secondary mb-3">
         <span className="oi oi-plus"></span> Create Deck</Link>
       {decks.map(deck => (
            <div className="card mb-3">
@@ -34,7 +45,7 @@ export default function Home() {
              </p>
              <Link to={`/decks/${deck.id}`} className="btn btn-secondary mr-2"><span className="oi oi-eye"></span> View</Link>
              <Link to={`/decks/${deck.id}/study`} className="btn btn-primary"> <span className="oi oi-book"></span> Study</Link>
-             <Link href="#" className="btn btn-danger float-right"><span className="oi oi-trash"></span> </Link>
+             <button type="button" className="btn btn-danger float-right" onClick={deleteDeckHandler} ><span className="oi oi-trash"></span></button>
            </div>
          </div>
       ))}
