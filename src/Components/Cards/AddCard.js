@@ -32,7 +32,6 @@
                 "back": back,
                 "deckId": deckId
             }
-            
             createCard(deckId, newCard).then(() => history.push(`/decks/${deckId}`))
           }
 

@@ -61,10 +61,10 @@
       "id": 8
     },
     {
-      "front": "test 2 front of card",
-      "back": "test 2 back of card",
-      "deckId": 3,
-      "id": 9
+      "id": 9,
+      "front": "test 2 front of card that is updated??",
+      "back": "test 2 back of card that is updated?",
+      "deckId": "3"
     },
     {
       "front": "3rd card",
@@ -73,10 +73,28 @@
       "id": 10
     },
     {
-      "front": "one more to study",
+      "id": 11,
+      "front": "update pleaseeee",
       "back": "one more to study back",
+      "deckId": "3"
+    },
+    {
+      "id": 12,
+      "front": "will it update?",
+      "back": "will it update? back?",
+      "deckId": "3"
+    },
+    {
+      "front": "add 2",
+      "back": "add 2 back",
       "deckId": 3,
-      "id": 11
+      "id": 14
+    },
+    {
+      "id": 15,
+      "front": "hjbjhk,",
+      "back": "khjbhkjbhjhbjkbjbkhbkhb",
+      "deckId": "3"
     }
   ]
 }

@@ -4,7 +4,7 @@
 
 import { Link, useParams, useHistory } from "react-router-dom"
 import React, { useState, useEffect } from "react";
-import { readDeck, deleteDeck } from "../../utils/api"
+import { readDeck, deleteDeck, deleteCard } from "../../utils/api"
 
 export default function ViewDeck() {
     const history = useHistory();
@@ -18,6 +18,15 @@ export default function ViewDeck() {
     )
     if (result) {
       deleteDeck(deckId).then(history.push("/"))
+    }
+    }
+
+    const deleteCardHandler = (cardId) => {
+      const result = window.confirm(
+        "Delete this card?\n\nYou will not be able to recover it."
+    )
+    if (result) {
+      deleteCard(cardId).then(history.push(`/decks/${deckId}`))
     }
     }
 
@@ -73,7 +82,7 @@ export default function ViewDeck() {
                                     {card.back}
                                 </p>
                             </div>
-                            <Link href="#" className="btn btn-danger float-right"><span className="oi oi-trash"></span> </Link>
+                            <button type="button" className="btn btn-danger float-right" onClick={() => deleteCardHandler(card.id)} ><span className="oi oi-trash"></span></button>
                             <Link to={`/decks/${deck.id}/cards/${card.id}/edit`} className="btn btn-secondary mr-2 float-right"><span class="oi oi-pencil"></span> Edit</Link>
                         </div>
                         </div>
