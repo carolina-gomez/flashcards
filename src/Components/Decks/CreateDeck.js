@@ -6,9 +6,6 @@ export default function CreateDeck() {
      const history = useHistory();
      const [name, setName] = useState("");
      const [description, setDescription] = useState("");
-
-
-
     const handleNameChange = (e) => setName(e.target.value);
     const handleDescriptionChange = (e) => setDescription(e.target.value);
 
