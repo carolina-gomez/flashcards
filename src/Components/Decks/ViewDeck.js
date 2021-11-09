@@ -10,7 +10,6 @@ export default function ViewDeck() {
     const history = useHistory();
     const {deckId} = useParams();
     const [deck, setDeck] = useState({cards: []});
-    const [cards, setCards] = useState([]);
 
     const deleteDeckHandler = (deckId) => {
       const result = window.confirm(
@@ -26,21 +25,20 @@ export default function ViewDeck() {
         "Delete this card?\n\nYou will not be able to recover it."
     )
     if (result) {
-      deleteCard(cardId).then(history.push(`/decks/${deckId}`))
+      deleteCard(cardId)
+      readDeck(deckId).then(setDeck);
     }
     }
-
 
     const loadDeck = () => {
       readDeck(deckId).then(setDeck)
-      setCards(deck.cards)
     }
   
     useEffect(() => {
         loadDeck()
-    
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [deck.id]);
+
+      // eslint-disable-next-line
+      }, [deckId]);
 
     return (
         <>
@@ -69,7 +67,7 @@ export default function ViewDeck() {
            </div>
          </div>
         <h1>Cards</h1>
-             {cards.map((card, index) => (
+             {deck.cards.map((card, index) => (
                         <div className="card mb-3">
                         <div className="card-body">
                             <div className="row">

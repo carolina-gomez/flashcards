@@ -1,5 +1,4 @@
     //updateCard(updatedCard, signal)
-    //path="/decks/:deckId/cards/:cardId/edit"
 
     import { Link, useParams, useHistory } from "react-router-dom"
     import React, { useState, useEffect } from "react";
@@ -14,27 +13,26 @@
         const [back, setBack] = useState("");
        const handleFrontChange = (e) => setFront(e.target.value);
        const handleBackChange = (e) => setBack(e.target.value);
-    
-    
-        const loadDeck = () => {
-          readDeck(deckId).then(setDeck)
-          readCard(cardId).then(setCard).then(setFront(card.front)).then(setBack(card.back))
-        }
       
         useEffect(() => {
-            loadDeck()
-          // eslint-disable-next-line react-hooks/exhaustive-deps
-          }, [deck.id]);
+            readDeck(deckId).then(setDeck)
+            readCard(cardId).then(setCard).then(() => setFront(card.front)).then(setBack(card.back))
+            console.log(card)
+
+          // eslint-disable-next-line 
+          }, [deckId, cardId]);
 
         const handleSubmit = (e) => {
             e.preventDefault();
-            const updatedCard = {
+             const updatedCard = {
                 "id": cardId,
                 "front": front,
                 "back": back,
-                "deckId": deckId
+                "deckId": Number(deckId)
             }
-            updateCard(updatedCard).then(() => history.push(`/decks/${deckId}`))
+            console.log(updatedCard)
+             updateCard(updatedCard)
+             history.push(`/decks/${deckId}`)
           }
 
 
