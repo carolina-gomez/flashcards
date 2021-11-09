@@ -1,19 +1,18 @@
 import React, { useState,useEffect } from "react";
-import { listDecks } from "../utils/api";
+import { listDecks,deleteDeck } from "../utils/api";
 import { Link } from "react-router-dom";
 
 export default function Home() {
      const [decks, setDecks] = useState([]);
 
-  const deleteDeckHandler = () => {
-    const deleteDeck = window.confirm(
+  const deleteDeckHandler = (deckId) => {
+    const result = window.confirm(
       "Delete this deck?\n\nYou will not be able to recover it."
   )
-  if (deleteDeck) {
-      console.log("deck was deleted")
-  } else {
-      console.log("you clicked cancel on ")
+  if (result) {
+    deleteDeck(deckId).then(loadDecks())
   }
+
   }
 
   const loadDecks = () => {
@@ -45,7 +44,7 @@ export default function Home() {
              </p>
              <Link to={`/decks/${deck.id}`} className="btn btn-secondary mr-2"><span className="oi oi-eye"></span> View</Link>
              <Link to={`/decks/${deck.id}/study`} className="btn btn-primary"> <span className="oi oi-book"></span> Study</Link>
-             <button type="button" className="btn btn-danger float-right" onClick={deleteDeckHandler} ><span className="oi oi-trash"></span></button>
+             <button type="button" className="btn btn-danger float-right" onClick={() => deleteDeckHandler(deck.id)} ><span className="oi oi-trash"></span></button>
            </div>
          </div>
       ))}

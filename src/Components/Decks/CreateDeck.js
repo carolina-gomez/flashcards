@@ -1,18 +1,24 @@
 import React, { useState } from "react"
 import { Link, useHistory } from "react-router-dom"
+import { createDeck } from "../../utils/api";
 
 export default function CreateDeck() {
-    const history = useHistory();
-   // const [deck, setDeck] = useState([])
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
+     const history = useHistory();
+     const [name, setName] = useState("");
+     const [description, setDescription] = useState("");
+
+
+
     const handleNameChange = (e) => setName(e.target.value);
     const handleDescriptionChange = (e) => setDescription(e.target.value);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Submitted:", name, description);
-
+        const newDeck = {
+            "name": name,
+            "description": description
+        }
+        createDeck(newDeck).then((nuevoDeck) => history.push(`/decks/${nuevoDeck.id}`))
     };
 
     const handleCancel = () => {
@@ -56,7 +62,7 @@ export default function CreateDeck() {
                     placeholder="Brief description of the deck">
                     </textarea>
                 </div>
-                <button type="button" className="btn btn-secondary mr-2" onClick={handleCancel}>Cancel</button>
+                <button type="button" className="btn btn-secondary mr-2" onClick={() => handleCancel}>Cancel</button>
                 <button type="submit" className="btn btn-primary mr-2" >Submit</button>
             </form>
         </>
