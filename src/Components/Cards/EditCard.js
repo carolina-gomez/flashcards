@@ -11,26 +11,34 @@
         const [card, setCard] = useState({})
         const [front, setFront] = useState("");
         const [back, setBack] = useState("");
+        
        const handleFrontChange = (e) => setFront(e.target.value);
        const handleBackChange = (e) => setBack(e.target.value);
       
         useEffect(() => {
             readDeck(deckId).then(setDeck)
             readCard(cardId).then(setCard).then(() => setFront(card.front)).then(setBack(card.back))
-            console.log(card)
 
           // eslint-disable-next-line 
           }, [deckId, cardId]);
 
         const handleSubmit = (e) => {
             e.preventDefault();
-             const updatedCard = {
+            const updatedCard = {
                 "id": cardId,
                 "front": front,
                 "back": back,
                 "deckId": Number(deckId)
             }
-            console.log(updatedCard)
+
+            if (front === undefined) {
+                updatedCard.front = card.front
+            }
+
+            if (back === undefined) {
+                updatedCard.back = card.back
+            }
+
              updateCard(updatedCard)
              history.push(`/decks/${deckId}`)
           }
@@ -63,8 +71,8 @@
                     name="front" 
                     rows="3" 
                     onChange={handleFrontChange}
-                    value={front}
-                    placeholder={card.front}>
+                    defaultValue={card.front}
+                   >
                     </textarea>
                 </div>
                 <div className="mb-3">
@@ -76,8 +84,8 @@
                     name="back" 
                     rows="3" 
                     onChange={handleBackChange}
-                    value={back}
-                    placeholder={card.back}>
+                    defaultValue={card.back}
+                    >
                     </textarea>
                 </div>
                 <button type="button" className="btn btn-secondary mr-2" onClick={handleCancel}>Cancel</button>
