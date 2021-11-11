@@ -9,16 +9,6 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
-    },
-    {
-      "name": "New Deck",
-      "description": "Brief description of deck",
-      "id": 3
-    },
-    {
-      "name": "Carolina's Deck",
-      "description": "Practice adding and editing cards",
-      "id": 4
     }
   ],
   "cards": [
@@ -58,72 +48,6 @@
       "back": "b",
       "deckId": 1,
       "id": 7
-    },
-    {
-      "id": 9,
-      "front": "woww",
-      "back": ":P",
-      "deckId": 3
-    },
-    {
-      "id": 10,
-      "front": "Matias",
-      "back": "Rodriguez",
-      "deckId": 3
-    },
-    {
-      "id": 11,
-      "front": "Hello",
-      "back": "Bye",
-      "deckId": 3
-    },
-    {
-      "id": 12,
-      "front": "Carolina",
-      "back": "Gomez",
-      "deckId": 3
-    },
-    {
-      "id": 13,
-      "front": "Wow",
-      "back": "Wow Back",
-      "deckId": 3
-    },
-    {
-      "id": 14,
-      "front": "Hello",
-      "back": "this is the back:P",
-      "deckId": 3
-    },
-    {
-      "id": 15,
-      "front": "hello",
-      "back": "what",
-      "deckId": 3
-    },
-    {
-      "id": 16,
-      "front": "Will the back be deleted?\n",
-      "back": "Will the front be deleted?",
-      "deckId": 3
-    },
-    {
-      "id": 17,
-      "front": "hello",
-      "back": "Hibiscus",
-      "deckId": 3
-    },
-    {
-      "id": 18,
-      "front": ";hello:)",
-      "back": "bye",
-      "deckId": 4
-    },
-    {
-      "id": 19,
-      "front": "Carolina",
-      "back": "Gomez perez",
-      "deckId": 4
     }
   ]
 }
