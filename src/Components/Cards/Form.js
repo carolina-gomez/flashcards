@@ -22,8 +22,7 @@
 
         const handleSubmit = (e) => {
             e.preventDefault();
-
-            console.log(submitting.submitting)
+            
             if (submitting.submitting === "edit card") {
                 const updatedCard = {
                     "id": cardId,
