@@ -1,8 +1,8 @@
  import { useParams, useHistory } from "react-router-dom"
     import React, { useState, useEffect } from "react";
-    import { readDeck, updateCard, readCard } from "../../utils/api"
+    import { readDeck, updateCard, readCard, createCard } from "../../utils/api"
     
-    export default function Form() {
+    export default function Form(submitting) {
         const history = useHistory();
         const {deckId, cardId } = useParams();
         const [deck, setDeck] = useState({cards: []});
@@ -15,29 +15,45 @@
       
         useEffect(() => {
             readDeck(deckId).then(setDeck)
-            readCard(cardId).then(setCard).then(setFront(card.front)).then(setBack(card.back))
+            if (submitting.submitting === "edit card"){
+                readCard(cardId).then(setCard).then(setFront(card.front)).then(setBack(card.back))
+            }
           // eslint-disable-next-line 
-          }, [deckId, cardId]);
+          }, [deckId]);
 
         const handleSubmit = (e) => {
             e.preventDefault();
-            const updatedCard = {
-                "id": cardId,
-                "front": front,
-                "back": back,
-                "deckId": Number(deckId)
+
+            console.log(submitting.submitting)
+            if (submitting.submitting === "edit card") {
+                const updatedCard = {
+                    "id": cardId,
+                    "front": front,
+                    "back": back,
+                    "deckId": Number(deckId)
+                }
+
+                if (front === undefined) {
+                    updatedCard.front = card.front
+                }
+
+                if (back === undefined) {
+                    updatedCard.back = card.back
+                }
+
+                updateCard(updatedCard)
+                history.push(`/decks/${deckId}`)
             }
 
-            if (front === undefined) {
-                updatedCard.front = card.front
+            if (submitting.submitting === "add card") {
+                e.preventDefault();
+                const newCard = {
+                    "front": front,
+                    "back": back,
+                    "deckId": deckId
+                }
+                createCard(deckId, newCard).then(() => history.push(`/decks/${deckId}`))
             }
-
-            if (back === undefined) {
-                updatedCard.back = card.back
-            }
-
-             updateCard(updatedCard)
-             history.push(`/decks/${deckId}`)
           }
 
 

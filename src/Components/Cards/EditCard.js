@@ -32,7 +32,7 @@
         </nav>
         </div>
         <h1>Edit Card</h1>
-        <Form />
+        <Form submitting="edit card"/>
 
     </>
     )
