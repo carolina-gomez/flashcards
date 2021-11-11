@@ -5,7 +5,6 @@
     export default function Form(submitting) {
         const history = useHistory();
         const {deckId, cardId } = useParams();
-        const [deck, setDeck] = useState({cards: []});
         const [card, setCard] = useState({})
         const [front, setFront] = useState("");
         const [back, setBack] = useState("");
@@ -14,7 +13,7 @@
        const handleBackChange = (e) => setBack(e.target.value);
       
         useEffect(() => {
-            readDeck(deckId).then(setDeck)
+            readDeck(deckId)
             if (submitting.submitting === "edit card"){
                 readCard(cardId).then(setCard).then(setFront(card.front)).then(setBack(card.back))
             }

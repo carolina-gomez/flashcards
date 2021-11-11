@@ -2,19 +2,15 @@
 
     import { Link, useParams } from "react-router-dom"
     import React, { useState, useEffect } from "react";
-    import { readDeck, readCard } from "../../utils/api"
+    import { readDeck } from "../../utils/api"
     import Form from "./Form";
     
     export default function EditCard() {
         const {deckId, cardId } = useParams();
         const [deck, setDeck] = useState({cards: []});
-        const [card, setCard] = useState({})
-        const [front, setFront] = useState("");
-        const [back, setBack] = useState("");
-      
+
         useEffect(() => {
             readDeck(deckId).then(setDeck)
-            readCard(cardId).then(setCard).then(setFront(card.front)).then(setBack(card.back))
             
           // eslint-disable-next-line 
           }, [deckId, cardId]);

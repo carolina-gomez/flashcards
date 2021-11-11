@@ -82,7 +82,7 @@ export default function StudyDeck() {
                         <div className="card-body">
                             <div className="row">
                                 <div className="col">
-                                    <h5 class="card-title">Card {index + 1} of {cards.length}</h5>
+                                    <h5 className="card-title">Card {index + 1} of {cards.length}</h5>
                                 </div>
                             </div>
                             <p className="card-text">
