@@ -14,6 +14,11 @@
       "name": "New Deck",
       "description": "Brief description of deck",
       "id": 3
+    },
+    {
+      "name": "Carolina's Deck",
+      "description": "Practice adding and editing cards",
+      "id": 4
     }
   ],
   "cards": [
@@ -57,7 +62,7 @@
     {
       "id": 9,
       "front": "woww",
-      "back": ":)",
+      "back": ":P",
       "deckId": 3
     },
     {
@@ -85,10 +90,34 @@
       "deckId": 3
     },
     {
+      "id": 14,
       "front": "Hello",
-      "back": "this is the back",
-      "deckId": 3,
-      "id": 14
+      "back": "this is the back:P",
+      "deckId": 3
+    },
+    {
+      "id": 15,
+      "front": "hello",
+      "back": "what",
+      "deckId": 3
+    },
+    {
+      "id": 16,
+      "front": "Will the back be deleted?\n",
+      "back": "Will the front be deleted?",
+      "deckId": 3
+    },
+    {
+      "id": 17,
+      "front": "hello",
+      "back": "Hibiscus",
+      "deckId": 3
+    },
+    {
+      "front": "Hello",
+      "back": "How Are you?",
+      "deckId": 4,
+      "id": 18
     }
   ]
 }

@@ -11,6 +11,7 @@
         const [deck, setDeck] = useState({cards: []});
         const [front, setFront] = useState("");
         const [back, setBack] = useState("");
+        const [card, setCard] = useState({front: "", back: ''});
        const handleFrontChange = (e) => setFront(e.target.value);
        const handleBackChange = (e) => setBack(e.target.value);
     
@@ -63,8 +64,9 @@
                     name="front" 
                     rows="3" 
                     onChange={handleFrontChange}
-                    value={front}
-                    placeholder="Front side of card">
+                    defaultValue={card.front}
+                    //placeholder="Front side of card"
+                    >
                     </textarea>
                 </div>
                 <div className="mb-3">
@@ -76,8 +78,9 @@
                     name="back" 
                     rows="3" 
                     onChange={handleBackChange}
-                    value={back}
-                    placeholder="Back side of card">
+                    defaultValue={card.back}
+                    //placeholder="Back side of card"
+                    >
                     </textarea>
                 </div>
                 <button type="button" className="btn btn-secondary mr-2" onClick={handleDone}>Done</button>
