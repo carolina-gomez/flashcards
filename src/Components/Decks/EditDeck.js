@@ -25,7 +25,7 @@
         loadDeck()
     
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [deck.id]);
+      }, [deckId]);
 
       const handleSubmit = (e) => {
         e.preventDefault();

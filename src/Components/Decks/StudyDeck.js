@@ -10,12 +10,6 @@ export default function StudyDeck() {
     const [cards, setCards] = useState([]);
     const [index, setIndex] = useState(0)
 
-
-    const loadDeck = () => {
-      readDeck(deckId).then(setDeck)
-      setCards(deck.cards)
-    }
-
     const flipHandler = () => {
         setFrontSide(!frontSide)
     }
@@ -37,11 +31,17 @@ export default function StudyDeck() {
         setIndex((index) => index + 1)
         setFrontSide(true)
     }
+
+    const loadDeck = () => {
+        readDeck(deckId).then(setDeck)
+        setCards(deck.cards)
+        console.log("!!!", deckId, deck.id)
+      }
   
     useEffect(() => {
-        loadDeck()
+        loadDeck();
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [deck.id]);
+      }, [deckId]);
         
 
     if (cards.length <= 2) {

@@ -68,7 +68,7 @@ export default function ViewDeck() {
          </div>
         <h1>Cards</h1>
              {deck.cards.map((card, index) => (
-                        <div className="card mb-3">
+                        <div key={index} className="card mb-3">
                         <div className="card-body">
                             <div className="row">
                             </div>

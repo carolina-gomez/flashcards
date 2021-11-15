@@ -2,8 +2,8 @@
   "decks": [
     {
       "id": 1,
-      "name": "Rendering in React",
-      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. "
+      "name": "Rendering with React",
+      "description": "React"
     },
     {
       "name": "React Router",
@@ -50,10 +50,22 @@
       "id": 7
     },
     {
-      "front": "I'm adding a card",
-      "back": "Card back",
+      "front": "what",
+      "back": "what",
       "deckId": 1,
       "id": 8
+    },
+    {
+      "front": "asdf",
+      "back": "asdf",
+      "deckId": 1,
+      "id": 9
+    },
+    {
+      "front": "asdfasdf",
+      "back": "asdfasf",
+      "deckId": 1,
+      "id": 10
     }
   ]
 }
