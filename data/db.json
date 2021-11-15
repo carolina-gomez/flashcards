@@ -48,6 +48,12 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "I'm adding a card",
+      "back": "Card back",
+      "deckId": 1,
+      "id": 8
     }
   ]
 }

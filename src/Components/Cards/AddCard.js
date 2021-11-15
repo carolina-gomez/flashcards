@@ -11,7 +11,7 @@
             readDeck(deckId).then(setDeck)
 
           // eslint-disable-next-line react-hooks/exhaustive-deps
-          }, [deck.id]);
+          }, [deckId]);
 
 
     return (
