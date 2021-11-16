@@ -15,7 +15,11 @@
         useEffect(() => {
             readDeck(deckId)
             if (submitting.submitting === "edit card"){
-                readCard(cardId).then(setCard).then(setFront(card.front)).then(setBack(card.back))
+                readCard(cardId).then((card) => {
+                    setCard(card)
+                    setFront(card.front)
+                    setBack(card.back)
+                })
             }
           // eslint-disable-next-line 
           }, [deckId]);

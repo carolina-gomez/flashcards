@@ -33,16 +33,17 @@ export default function StudyDeck() {
     }
 
     const loadDeck = () => {
-        readDeck(deckId).then(setDeck)
-        setCards(deck.cards)
-        console.log("!!!", deckId, deck.id)
+       
+        readDeck(deckId).then((deck) => {
+            setDeck(deck);
+            setCards(deck.cards)
+        })
       }
   
     useEffect(() => {
         loadDeck();
       // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [deckId]);
-        
 
     if (cards.length <= 2) {
         return (
